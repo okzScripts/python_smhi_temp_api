@@ -7,7 +7,7 @@ conn = sqlite3.connect('halmstad_temp.db')
 
 cursor = conn.cursor()
 
-df = pd.read_sql_query(f'SELECT * FROM prev_temps',conn)
+df = pd.read_sql_query(f'SELECT * FROM prev_temps ORDER BY time DESC LIMIT 25',conn)
 
 print(df)
 
