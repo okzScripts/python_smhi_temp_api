@@ -2,6 +2,7 @@ import schedule
 import time
 import sqlite3
 from datetime import datetime
+import pandas as pd
 
 from app import getLatestDBentry,WriteValueToDb,readValues
 
@@ -13,6 +14,6 @@ counter = 0
 while True:
     
     schedule.run_pending()
-    time.sleep(5)
+    time.sleep(300)
     print(f"Awaiting new measured values from API... Count: {counter}")
     counter += 1
